@@ -1,0 +1,6 @@
+# Obsidian local workspace state (machine-specific, not shared)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Keep .obsidian/ plugin config, appearance, and snippets — do not ignore the folder entirely
