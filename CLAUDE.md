@@ -121,6 +121,7 @@ At the start of every session, in this order:
 - Use `[[wikilinks]]` for all internal cross-references; never use file paths
 - In permanent notes: only link notes that actually exist
 - In MOCs: planned notes may be listed with a `*(stub)*` suffix — treat these as TODOs, not read targets
+- Tag top-level segment must exactly match an existing `domain` slug (e.g. `machine-learning/...`, not `ml/...`) — check `99-meta/vault-index.md` or existing tags before inventing a new prefix
 
 ---
 

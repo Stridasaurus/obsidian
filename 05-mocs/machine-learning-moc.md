@@ -1,14 +1,14 @@
 ---
-title: "Machine Learning — Map of Content"
+title: Machine Learning — Map of Content
 type: moc
 domain: machine-learning
 status: draft
 created: 2026-06-30
 updated: 2026-06-30
 tags:
-  - ml/neural-networks
-  - ml/time-series
-  - ml/optimization
+  - machine-learning/neural-networks
+  - machine-learning/time-series
+  - machine-learning/optimization
 ---
 
 # Machine Learning MOC

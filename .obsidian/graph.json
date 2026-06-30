@@ -6,7 +6,71 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": true,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "tag:#space-physics  ",
+      "color": {
+        "a": 1,
+        "rgb": 6055126
+      }
+    },
+    {
+      "query": "tag:#meta  ",
+      "color": {
+        "a": 1,
+        "rgb": 13683907
+      }
+    },
+    {
+      "query": "tag:#finance  ",
+      "color": {
+        "a": 1,
+        "rgb": 9753872
+      }
+    },
+    {
+      "query": "tag:#neuroscience  ",
+      "color": {
+        "a": 1,
+        "rgb": 15490023
+      }
+    },
+    {
+      "query": "tag:#machine-learning  ",
+      "color": {
+        "a": 1,
+        "rgb": 11122410
+      }
+    },
+    {
+      "query": "tag:#project  ",
+      "color": {
+        "a": 1,
+        "rgb": 16711680
+      }
+    },
+    {
+      "query": "tag:#claude-workflow  ",
+      "color": {
+        "a": 1,
+        "rgb": 15443783
+      }
+    },
+    {
+      "query": "tag:#mathematics  ",
+      "color": {
+        "a": 1,
+        "rgb": 12386304
+      }
+    },
+    {
+      "query": "tag:#writing  ",
+      "color": {
+        "a": 1,
+        "rgb": 15722517
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
@@ -17,6 +81,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.713275462622439,
-  "close": true
+  "scale": 0.5087618855792503,
+  "close": false
 }

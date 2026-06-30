@@ -1,4 +1,6 @@
 {
   "accentColor": "#c91d1d",
-  "baseFontSize": 21
+  "baseFontSize": 21,
+  "cssTheme": "Typomagical",
+  "theme": "system"
 }

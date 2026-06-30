@@ -8,6 +8,38 @@ updated: 2026-06-30
 
 **Last updated:** 2026-06-30 (session 7)
 
+## What was done (session 8 — 2026-06-30)
+
+### Domain taxonomy decisions + proactive permanent-note flagging + CLAUDE.md hierarchy rule
+
+Entirely meta/infrastructure session — no research content written. Triggered by the user asking whether neuroscience and finance should get MOCs like machine-learning and space-physics already have.
+
+**Neuroscience/finance MOCs: held off.** Checked the vault — there is only **one permanent note in the entire vault** (`agentic-document-cascade.md`). MOCs index permanent notes; creating MOCs for domains with zero permanent-note content would just be empty scaffolding. Decision: wait until neural-gibf (neuroscience) and rv-prediction (finance/ML) actually produce extractable permanent notes, which should happen soon given they're top-priority active projects.
+
+**Domain slug decisions made:**
+- `neural-gibf-proposal.md`: `domain: computational-neuroscience` → `neuroscience` (shorter, doesn't preclude computational work later — user's reasoning, agreed)
+- `rv-prediction.md`: churned `machine-learning` → `finance` → reverted to `machine-learning`. Landed on a principle: `domain` (singular field, drives MOC filing) should reflect the *primary axis of contribution/methodology*; secondary axes are already captured via slash-hierarchical `tags` (this note already had both `machine-learning/time-series` and `finance/volatility` tagged). Since RV-prediction is "an ML project using finance as a medium" (user's framing), domain = machine-learning is correct.
+
+**Vault self-assessment given on request.** Structurally well-suited to me as reader (schema, mandatory Constraints & Invariants section, hot.md/active-projects.md continuity files) but badly underpopulated — only 1 permanent note, empty inbox, sparse MOCs. Walked the user through the automatic vs. manual halves of the system: hot.md read/write is automatic (session-start read, "wrap up" trigger to write); 00-inbox capture and 04-permanent extraction are NOT automatic and weren't being used.
+
+**New standing behavior adopted.** User asked me to proactively flag durable/atomic concepts as permanent-note candidates during project work rather than waiting to be asked. Added as a one-line rule under "Obsidian Research Vault" in `~/.claude/CLAUDE.md` (kept deliberately terse after user feedback that the first draft was too verbose for a global file).
+
+**Tag cleanup.** User asked for a state-of-the-system report, which surfaced two real inconsistencies: `ml/*` vs `machine-learning/*` tag prefixes used for the same concept (`machine-learning-moc.md` had the former), and a stale `computational-neuroscience/source-localization` tag left over after the domain rename above. Fixed both — tags now consistently use the full domain slug as the top-level segment. (Stray-looking tags like `tag`, `nested/tag` etc. were a false alarm — they're example syntax inside the `obsidian-markdown` skill's own reference docs, not vault content.) Note: a `merge: false` call on `machine-learning-moc.md`'s frontmatter briefly wiped its title/type/domain/status fields — caught immediately via read-back and restored; worth remembering `update_frontmatter` needs `merge: true` (default) unless a full replace is actually intended.
+
+**New vault rule added** to `CLAUDE.md` Writing Rules: tag top-level segment must exactly match an existing `domain` slug — prevents the `ml/` vs `machine-learning/` drift from recurring.
+
+**CLAUDE.md hierarchy leanness principle added globally.** User has noticed CLAUDE.md files I write tend to be too verbose. Added a short "CLAUDE.md Leanness" section to the top of `~/.claude/CLAUDE.md`: leanness strictness increases with scope — global is leanest, repo-level looser, subdirectory loosest — while every level should still convey what it needs.
+
+### Unresolved / next steps
+
+- **`04-permanent/` is still the main gap** — only 1 note vault-wide. Should start filling in naturally now that proactive flagging is active, but worth checking back on.
+- **Neuroscience/finance MOCs** — revisit once each domain has a few permanent notes worth indexing.
+- **RV Prediction + CT essay** (top 2 priorities, due ~2026-07-07) — still no actual research work started; this session and session 7 were both pure meta/organizational work.
+- **Uncommitted changes**: vault has frontmatter edits across several notes plus the vault `CLAUDE.md` edit; `~/.claude/CLAUDE.md` also edited (not git-tracked, lives outside repos).
+- Carried over unchanged: `repo-state` skill still untested, GitHub MCP still unverified, research backlog (`secs-elementary-current-system.md`, `fukushima-theorem.md`, `gibf-beamforming-core.md`, 4 literature notes) unwritten.
+
+---
+
 ## What was done (session 7 — 2026-06-30)
 
 ### Project prioritization + new claude-workflow area
