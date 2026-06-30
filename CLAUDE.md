@@ -1,6 +1,6 @@
 # Research Vault — Standing Instructions
 
-last-updated: 2026-06-29
+last-updated: 2026-06-30
 
 You are operating inside Strider Settgast's research knowledge base. This is a multi-domain research vault. Your role is to retrieve, write, and maintain notes as instructed. Do not reorganize structure without explicit instruction.
 
@@ -30,7 +30,7 @@ Every note you create or edit must have this frontmatter. The values for `type`,
 ```yaml
 ---
 title: "Full descriptive title as a phrase or declarative claim"
-type: permanent          # permanent | literature | moc | capture | project | area
+type: permanent          # permanent | literature | moc | capture | project | area | reference
 domain: <kebab-slug>     # kebab-case: e.g., physics, machine-learning, mathematics
 status: active           # active | draft | archived | evergreen
 created: YYYY-MM-DD
@@ -53,6 +53,7 @@ source_url: ""           # literature notes only
 | MOC | `domain-name-moc.md` | `machine-learning-moc.md` |
 | Capture/inbox | `YYYYMMDD-brief-slug.md` | `20260629-mhd-scaling-idea.md` |
 | Project note | `project-name.md` inside `01-projects/project-name/` | |
+| Reference | `resource-slug.md` | `code-repositories-map.md` |
 
 Rules: lowercase, hyphens only, no spaces, no special characters.
 
@@ -84,6 +85,11 @@ At the start of every session, in this order:
 **Literature notes** (`03-resources/`):
 - Frontmatter: full `source` and `source_url` fields
 - Required sections: `## Key Quotes` (verbatim with page/section reference), `## My Summary` (in your own words), `## Connections`
+
+**Reference notes** (`03-resources/`):
+- For durable reference material that is not a citable source: maps, API docs, configuration guides, inventories
+- No required sections — structure to the content; a `## Notes` section for annotations is conventional
+- File naming: `resource-slug.md` (no date prefix)
 
 **MOC files** (`05-mocs/`):
 - Organized wikilink lists only — no prose analysis

@@ -1,7 +1,7 @@
 ---
 title: "Vault Index"
 type: meta
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Vault Index
@@ -29,3 +29,11 @@ Master catalog of permanent notes and MOCs. Update when adding a new permanent n
 | `neural-gibf/` | planning | Cross-domain beamforming for MEG/EEG cortical source localization |
 | `rv-prediction/` | in-progress | LSTM vs HAR for realized volatility forecasting (DL course project) |
 | `em-globe/` | draft | Full-wave EM solver for ionosphere-Earth system (3-year proposal) |
+
+
+## Resources (`03-resources/`)
+
+| File | Type | Summary |
+|---|---|---|
+| `local-library.md` | reference | Local PDF collection: textbooks + IBF/SECS/GIBF papers, with paths |
+| `code-repositories-map.md` | reference | All Git repos under Code-Repositories with stack and purpose |

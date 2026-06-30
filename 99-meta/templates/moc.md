@@ -3,8 +3,8 @@ title: "Domain Name — Map of Content"
 type: moc
 domain: <kebab-slug>
 status: active
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: []
 ---
 

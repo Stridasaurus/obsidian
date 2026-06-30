@@ -1,43 +1,79 @@
 ---
-title: "Recent Context Cache"
+title: Recent Context Cache
 type: meta
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Recent Context Cache
 
-**Last updated:** 2026-06-30
+**Last updated:** 2026-06-30 (session 3)
+
+## What was done (session 3 — 2026-06-30)
+
+### Local PDF library cataloged
+
+Short session. The main action was registering a local PDF collection that already existed on the desktop into the vault and into Claude's persistent memory, so future sessions can reference it without re-deriving the paths.
+
+Two folders cataloged:
+
+**`C:\Users\strid\Desktop\School\IBF_Project\`** — five papers directly relevant to the active GIBF/SECS research projects: SECS.pdf, Ionospheric SECS.pdf, GIB.pdf, Suzuki GIBF.pdf, Elastic Net.pdf. These are the primary source documents for `01-projects/gibf/` and `01-projects/neural-gibf/`.
+
+**`C:\Users\strid\Desktop\School\Textbooks\`** — broad collection spanning physics (Griffiths E&M 4th, Halliday & Resnick), quantum mechanics (Griffiths QM 3rd, Sakurai), mathematics (Nagle ODEs, Briggs Calculus, Fleisch Vectors & Tensors, Leinster Category Theory, Type Theory, Brown-Churchill Complex Variables, Bertsekas & Tsitsiklis Probability), finance (Shreve Stochastic Calculus I & II, Tsay Financial Time Series, Brealey-Myers-Allen Corporate Finance), neuroscience (Dayan & Abbott Theoretical Neuroscience, Churchland Neurophilosophy, Tononi Effective Information), and electronics (Eggleston Basic Electronics). Also contains CV.
+
+### Notes created/updated
+- **`03-resources/local-library.md`** — new reference note with a full table of every PDF, organized by domain
+- **`99-meta/vault-index.md`** — added Resources section; bumped `updated` to 2026-06-30
+- **Memory** — `reference_local_library.md` added to Claude's persistent memory so future sessions know where to look without being told
+
+## Unresolved / next steps
+
+- No research content written this session; same backlog as session 2
+- IBF_Project papers are now accessible — good starting point for literature notes (Suzuki GIBF, SECS, Ionospheric SECS are the three most directly relevant to the open items below)
+- **Item 4:** Create stub MOCs — `05-mocs/space-physics-moc.md` and `05-mocs/machine-learning-moc.md`
+- **Item 5:** Write first permanent notes: `fukushima-theorem.md`, `secs-elementary-current-system.md`, `gibf-beamforming-core.md`
+- **Item 6:** Literature notes for the 4 papers cited in SECS-GIBF: Suzuki 2011, Vanhamäki & Juusola 2020, Wax & Kailath 1985, Fukushima 1976 — source PDFs now on disk
+- Neural-GIBF Week 1 still blocked on 4 open decisions
+- Uncommitted git changes in vault (local-library.md, vault-index.md) — commit when next substantive session wraps
+
+---
+
+## Previous session (session 2 — 2026-06-30)
 
 ## What was done
 
-First real organization pass of the vault. All 7 inbox captures from 2026-06-30 were triaged and filed:
+This session was entirely infrastructure — no research content was written. The goal was to finish the three-plugin setup (Templater, Daily Notes, Dataview) that was started at the end of the previous session.
 
-- `04-permanent/agentic-document-cascade.md` — Evergreen methodology note on the four-layer document cascade (Manifesto → SPEC → design → CLAUDE.md) for agent-driven coding projects. Frontmatter updated: type `permanent`, status `evergreen`.
-- `03-resources/code-repositories-map.md` — Full map of all repos under `Code-Repositories/`: Python repos (magsim, magnetic-source-identification, mhd-ibf-reconstruction, GIBF, lab-notebooks, Summer-2026-DL), Sites repos (settgast-ui, dynamica, correlationlab, LIF-project, StriderSettgast.com, application-tracker, resume-tracker, magnetometer-coherogram, pca-engine). Cross-cutting notes on shared sensor file (L058.txt), magsim as shared dep, research pipeline direction, job search context.
-- `01-projects/dynamica/dynamica-manifesto.md` — Full Dynamica manifesto: three studios (QuantViz/NeuroLearn/PhySim replacing SignalViz), M1–M8 math taxonomy, module DAG (Compute Core → Model Shell → Models → Registry → Navigation), 7 success criteria, 7 non-negotiable invariants, 12-model launch slice, 5 downstream SPECs implied.
-- `01-projects/gibf/secs-gibf-viability.md` — SECS-GIBF viability test build brief: two experiments (CF/DF identifiability via observability ratio; GIBF vs MMV-L1 with decision rule Δr̄ ≥ 20%), three solvers (L2 min-norm, GIBF per-mode L1 IRLS, MMV-L1 joint), build order, secsy API warning.
-- `01-projects/neural-gibf/neural-gibf-proposal.md` — Neural-GIBF proposal: port GIBF machinery from magnetospheric to cortical source localization. Five-week plan, three data tiers (simulation/phantom/real evoked), resolution matrix analysis, four open decisions blocking Week 1.
-- `01-projects/rv-prediction/rv-prediction.md` — RV Prediction DL project: LSTM vs HAR, 5 notebooks, Garman–Klass estimator, QLIKE loss, walk-forward OOS, pre-committed three-way analysis (by regime / horizon / architecture-vs-features).
-- `01-projects/em-globe/em-globe-proposal.md` — EM-Globe long-range proposal: full-wave Maxwell FEM solver for ionosphere-Earth system, 9 modules, 6 known research gaps requiring human intervention (especially reciprocity in gyrotropic media). Upstream of SECS-GIBF.
+### Schema update
+Added `reference` as a sixth note type to the frontmatter schema in `CLAUDE.md`. References live in `03-resources/`, use `resource-slug.md` naming (no date prefix), and have no required sections. This was motivated by `code-repositories-map.md`, which didn't fit any of the five existing types cleanly. The `type` enum in the schema is now: `permanent | literature | moc | capture | project | area | reference`.
 
-Structural fix: `02-areas/` had been accidentally moved by Obsidian into `01-projects/02-areas/`. Restored to vault root with `.gitkeep`.
+### Template files fixed
+All four template files in `99-meta/templates/` had `YYYY-MM-DD` as literal placeholder text for the `created` and `updated` frontmatter fields. These were patched to use Templater's auto-fill syntax: `<% tp.date.now("YYYY-MM-DD") %>`. The four templates updated: `permanent.md`, `capture.md`, `literature.md`, `moc.md`.
 
-`99-meta/active-projects.md` and `99-meta/vault-index.md` both updated to reflect current state.
+### Templater plugin configured
+The community plugin Templater was installed and its template folder set to `99-meta/templates`. The "Trigger Templater on new file creation" option was left OFF to avoid auto-applying templates to every new file. Workflow for using templates: `Ctrl+N` (new note) → `Ctrl+P` → `Templater: Open Insert Template modal` → pick template → dates auto-fill.
 
-## Active project landscape (as of 2026-06-30)
+### Daily Notes plugin configured
+The core Daily Notes plugin was enabled and configured:
+- **New file location:** `00-inbox` — daily notes now route into the inbox instead of vault root
+- **Date format:** `YYYYMMDD-[daily]` — produces filenames like `20260630-daily.md`, matching the vault's capture naming convention
 
-- **Dynamica** (in-progress) — next: write SPEC: compute-core
-- **SECS-GIBF** (planning) — next: build `geometry` + `transfer` modules, land Experiment A
-- **Neural-GIBF** (planning) — next: resolve 4 open decisions before Week 1
-- **RV Prediction** (in-progress) — next: Phase 1, notebook 00 (data + HAR/GARCH baselines)
-- **EM-Globe** (proposal/draft) — no active work; upstream of SECS-GIBF
+A Moment.js gotcha encountered: the literal string `daily` contains format tokens (`d` = day-of-week, `a` = am/pm, `l` = locale date, `y` = year), so the format `YYYYMMDD-daily` produced garbled output like `20260630-2ami6/30/20262026`. Fix: wrap literal text in square brackets → `YYYYMMDD-[daily]`.
 
-## Connections to map
+### Dataview plugin
+Installed and enabled. No configuration required for basic use.
 
-The three research projects form a loose dependency chain: SECS-GIBF (immediate viability gate) → Neural-GIBF (cross-domain port, shares GIBF machinery) → EM-Globe (long-run upstream providing complex transfer matrix). Dynamica and RV Prediction are independent.
+## Current state of vault infrastructure
 
-## Unresolved
+- Templates: fully functional with auto-fill dates
+- Daily notes: routing correctly to `00-inbox`
+- Dataview: ready for frontmatter queries
+- All project notes have correct `type: project` frontmatter (fixed last session)
+- The two stale daily notes (`20260629-daily.md`, `20260630-daily.md`) are sitting in `00-inbox` unprocessed — should be triaged or deleted at next review
 
-- No permanent notes yet on core domain concepts (space physics / SECS / MHD wave physics). Worth creating those as research sessions happen.
-- No MOCs created yet. First MOC candidates: `space-physics-moc.md`, `machine-learning-moc.md`.
-- Neural-GIBF Week 1 is blocked on 4 open decisions — resolve before scheduling build time.
+## Unresolved / next steps
+
+- **Item 4:** Create stub MOCs — `05-mocs/space-physics-moc.md` and `05-mocs/machine-learning-moc.md`
+- **Item 5:** Write first permanent notes: `fukushima-theorem.md`, `secs-elementary-current-system.md`, `gibf-beamforming-core.md`
+- **Item 6:** Literature notes for the 4 papers cited in SECS-GIBF: Suzuki 2011, Vanhamäki & Juusola 2020, Wax & Kailath 1985, Fukushima 1976
+- Neural-GIBF Week 1 still blocked on 4 open decisions — resolve before scheduling build time
+- No research content was added this session; the vault infrastructure is now ready for actual research work to begin

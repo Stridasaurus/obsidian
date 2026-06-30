@@ -1,6 +1,6 @@
 ---
 title: Code Repositories Map — Strider Settgast
-type: capture
+type: reference
 domain: general
 status: active
 created: 2026-06-30

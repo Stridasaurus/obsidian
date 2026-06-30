@@ -3,8 +3,8 @@ title: "Declarative claim as a full sentence"
 type: permanent
 domain: <kebab-slug>
 status: active
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: []
 ---
 

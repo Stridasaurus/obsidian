@@ -1,8 +1,8 @@
 ---
 title: Realized Volatility Prediction — Deep Learning Project 2
-type: capture
+type: project
 domain: machine-learning
-status: draft
+status: active
 created: 2026-06-30
 updated: 2026-06-30
 tags:

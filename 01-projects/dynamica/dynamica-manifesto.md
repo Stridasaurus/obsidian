@@ -1,6 +1,6 @@
 ---
 title: Dynamica Manifesto — Project Spine and Design Decisions
-type: capture
+type: project
 domain: general
 status: active
 created: 2026-06-30

@@ -1,8 +1,8 @@
 ---
 title: SECS-GIBF Viability Test — Two Go/No-Go Experiments
-type: capture
+type: project
 domain: space-physics
-status: draft
+status: active
 created: 2026-06-30
 updated: 2026-06-30
 tags:

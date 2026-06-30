@@ -1,6 +1,6 @@
 ---
 title: EM-Globe — Full-Wave EM Solver for the Ionosphere-Earth System (Proposal)
-type: capture
+type: project
 domain: space-physics
 status: draft
 created: 2026-06-30

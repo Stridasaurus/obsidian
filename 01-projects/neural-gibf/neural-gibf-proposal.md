@@ -1,9 +1,9 @@
 ---
 title: Neural-GIBF — Cross-Domain Inverse Beamforming for MEG/EEG Cortical
   Source Localization
-type: capture
+type: project
 domain: computational-neuroscience
-status: draft
+status: active
 created: 2026-06-30
 updated: 2026-06-30
 tags:

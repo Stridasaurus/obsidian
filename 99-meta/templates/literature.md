@@ -3,8 +3,8 @@ title: "Author Year — Short Title"
 type: literature
 domain: <kebab-slug>
 status: active
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: []
 source: "Author(s), Year, Full Title"
 source_url: ""

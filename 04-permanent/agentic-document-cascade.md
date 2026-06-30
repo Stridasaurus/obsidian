@@ -51,10 +51,3 @@ Lean ambient context for Claude Code. Pointers and invariants, never the specs t
 - **Name things once.** Use the manifesto glossary consistently from manifesto to code.
 - **Carve at natural joints.** Each module = a coherent task one agent can complete in one focused session.
 
-## Current Project Status
-
-As of 2026-06-30, the following projects are in-flight but none have a completed/approved manifesto:
-- SECS-GIBF viability test (has detailed build briefs at spec level)
-- Realized Volatility Prediction (has a plan that mixes manifesto and spec)
-- EM-Globe full-wave solver (has a funding proposal, not a build document)
-- Neural-GIBF cross-domain beamforming (has a proposal with good thesis but missing manifesto sections)
