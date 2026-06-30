@@ -8,6 +8,41 @@ updated: 2026-06-30
 
 **Last updated:** 2026-06-30 (session 3)
 
+## What was done (session 4 — 2026-06-30)
+
+### Vault optimized for Claude-as-reader; MOC stubs created
+
+**Committed and pushed sessions 2–3 work.** All infrastructure changes (Templater, Dataview, Daily Notes config, template fixes, local-library.md, schema update) were staged and pushed to remote as a single commit.
+
+**Created stub MOCs.** `05-mocs/space-physics-moc.md` and `05-mocs/machine-learning-moc.md` — both contain H2-sectioned wikilink lists for the relevant backlog notes, annotated with `*(stub)*` where the target note doesn't exist yet. Vault-index.md updated to reflect both.
+
+**Redesigned permanent note structure for Claude-as-reader.** Key realization: this vault is written entirely for Claude, not for human reading. This changes the design significantly — the reader is a fresh Claude session with no prior context, not a human with progressive understanding. Changes made:
+
+- **CLAUDE.md** — old four-section structure (Mechanism / Evidence / Connections / Open Questions) replaced with five sections:
+  - `## Formulation` — equations inline, all notation defined here
+  - `## Constraints & Invariants` — non-obvious things Claude must not violate; failure modes; things that look plausible but are wrong. Flagged as the highest-value section of any permanent note.
+  - `## Connections` — wikilinks to chain-read
+  - `## Open Questions` — what's unresolved
+  - `## Sources` — pointer to lit note and/or PDF path for verification before building on the note
+- Added rule: natural-language concept names must appear beside any LaTeX notation — `search_notes` is plain keyword search, so `\nabla\times\mathbf{J}` won't match a query for "curl of current density"
+- Added rule: in MOCs, planned notes may be listed with `*(stub)*` suffix as TODOs; in permanent notes, only link notes that exist
+- Default status in permanent template changed to `draft`
+
+- **`99-meta/templates/permanent.md`** — updated to match the new five-section structure
+
+### Key insight from advisor call
+Retrieval is link-graph traversal, not just reading. The highest-leverage surface is discoverability: declarative title, tags, MOC annotation, and opening line. A perfectly dense note the MOC doesn't point to never gets loaded. Also confirmed: `search_notes` is plain keyword search returning file path + short excerpt — full note is retrieved separately with `read_note`. Sections do not need to be self-contained for chunking reasons, but LaTeX must be accompanied by natural-language names for keyword searchability.
+
+## Unresolved / next steps
+
+- **Item 5 (next):** Write first permanent notes from source PDFs — start with `secs-elementary-current-system.md`. Source: `Desktop\School\IBF_Project\SECS.pdf` and `Ionospheric SECS.pdf`. Read PDFs before writing — Constraints & Invariants section must come from source, not memory.
+- **Item 5 continued:** `fukushima-theorem.md`, `gibf-beamforming-core.md`
+- **Item 6:** Literature notes for Suzuki 2011, Vanhamäki & Juusola 2020, Wax & Kailath 1985, Fukushima 1976
+- Neural-GIBF Week 1 still blocked on 4 open decisions
+- SECS-GIBF: next action is building geometry + transfer modules
+
+---
+
 ## What was done (session 3 — 2026-06-30)
 
 ### Local PDF library cataloged

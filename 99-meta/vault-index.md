@@ -18,7 +18,8 @@ Master catalog of permanent notes and MOCs. Update when adding a new permanent n
 
 | File | Domain | Summary |
 |---|---|---|
-| (none yet) | | |
+| `space-physics-moc.md` | space-physics | Index for ionospheric currents, SECS/GIBF source localization, and related literature |
+| `machine-learning-moc.md` | machine-learning | Index for ML architectures, time series, and source localization (Neural-GIBF, RV prediction) |
 
 ## Projects (`01-projects/`)
 

@@ -72,14 +72,28 @@ At the start of every session, in this order:
 ## Note Structure
 
 **Permanent notes** (`04-permanent/`):
-- Title in frontmatter is a declarative claim: "Attention mechanisms encode relative positional importance between tokens" — not just "Attention"
-- Opening paragraph stands alone — it will often be the only chunk retrieved
-- Use H2 sections when the note exceeds ~400 words:
+- **Reader is a fresh Claude session** — write dense and technical; no narrative scaffolding, no "this note explains..." Just the claim and content.
+- Title in frontmatter is a declarative claim: "Fukushima theorem: poloidal currents leave no detectable ground-level B signature" — not just "Fukushima theorem"
+- Opening paragraph: state the core claim + technical summary fully. Claude reads this to decide whether to read further.
+- **Natural-language concept names must appear beside any LaTeX notation** — `search_notes` is plain keyword search; `\nabla\times\mathbf{J}` will not match a query for "curl of current density"
+- Required sections (always use all five):
   ```
-  ## Mechanism
-  ## Evidence      ← wikilinks to literature notes as [[author-year-title]]
-  ## Connections   ← wikilinks to related permanent notes
+  ## Formulation
+  Key equations inline. Define all notation here. No deferred symbols.
+
+  ## Constraints & Invariants
+  Non-obvious things Claude must not violate. Failure modes.
+  Things that look plausible but are wrong. This section is the highest-value part of any permanent note.
+
+  ## Connections
+  [[wikilinks]] to related permanent notes Claude should chain-read.
+
   ## Open Questions
+  What is unresolved. What the researcher is actively investigating.
+
+  ## Sources
+  Pointer to lit note and/or PDF path for verification before building on this note.
+  E.g., [[suzuki-2011-gibf]] · Desktop\School\IBF_Project\SECS.pdf
   ```
 
 **Literature notes** (`03-resources/`):
@@ -105,7 +119,8 @@ At the start of every session, in this order:
 - Prefer `patch_note` to update an existing note over creating a new one when content overlaps
 - Leave anything uncertain at `status: draft`
 - Use `[[wikilinks]]` for all internal cross-references; never use file paths
-- Do not write speculative connections as wikilinks — only link notes that actually exist
+- In permanent notes: only link notes that actually exist
+- In MOCs: planned notes may be listed with a `*(stub)*` suffix — treat these as TODOs, not read targets
 
 ---
 

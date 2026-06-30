@@ -2,7 +2,7 @@
 title: "Declarative claim as a full sentence"
 type: permanent
 domain: <kebab-slug>
-status: active
+status: draft
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: []
@@ -10,15 +10,15 @@ tags: []
 
 # Declarative claim as a full sentence
 
-Opening paragraph that stands alone — state the idea completely in 2–4 sentences.
+Opening paragraph: state the core claim and technical summary completely. Dense — no scaffolding. Natural-language concept names must appear beside any LaTeX notation.
 
-## Mechanism
+## Formulation
 
-How it works.
+Key equations inline. Define all notation here — no deferred symbols.
 
-## Evidence
+## Constraints & Invariants
 
-- [[author-year-short-title]] — what this source shows
+Non-obvious things that must not be violated. Failure modes. Things that look plausible but are wrong.
 
 ## Connections
 
@@ -26,4 +26,8 @@ How it works.
 
 ## Open Questions
 
-- What remains unresolved?
+- What remains unresolved or actively under investigation?
+
+## Sources
+
+- [[lit-note-slug]] · path/to/source.pdf
