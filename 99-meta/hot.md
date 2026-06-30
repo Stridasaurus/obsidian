@@ -6,7 +6,151 @@ updated: 2026-06-30
 
 # Recent Context Cache
 
-**Last updated:** 2026-06-30 (session 3)
+**Last updated:** 2026-06-30 (session 7)
+
+## What was done (session 7 — 2026-06-30)
+
+### Project prioritization + new claude-workflow area
+
+**Priority ranking captured.** User stated priority order across active projects: 1) Realized Volatility Prediction, 2) a category-theory/differential-geometry course essay (both due ~2026-07-07), 3) SECS-GIBF Viability (mag-GIBF, career move), 4) Dynamica (already started, unfinished work looks bad), 5) Neural-GIBF/MEG (not yet started). Clarified with the user that the CT essay is a **separate** project from the math-blog brainstorm, not the same thing — but it's an explicit precursor: the user won't start the blog until the essay is done and expects the essay's material to roll directly into Post 1 ("Sets vs. Categories") and/or the duality posts (5a/5b).
+
+**New project created:** `01-projects/category-theory-diffgeo-essay/category-theory-diffgeo-essay.md` — status in-progress, due ~2026-07-07, notes the math-blog dependency.
+
+**`99-meta/active-projects.md` restructured** with explicit numbered priority order and due dates; math-blog reframed as "gated on #2" rather than independently ranked. **`99-meta/vault-index.md`** projects table updated to match. Saved persistent memory `project_priority_2026q3.md` so future sessions open already knowing this order.
+
+**New `02-areas/claude-workflow/` domain added**, on user request ("I want to be organized about how I use Claude"). This is an ongoing practice domain (no deliverable/end date) for CLAUDE.md hierarchy, custom skills, MCP servers, and configuration — deliberately placed in `02-areas/` rather than `01-projects/` since it never "completes." Created:
+- `02-areas/claude-workflow/claude-workflow.md` — area note (scope: CLAUDE.md hierarchy, skills, MCP servers, hooks, recurring conventions)
+- `05-mocs/claude-workflow-moc.md` — MOC
+- Registered the new `claude-workflow` domain in the vault's own `CLAUDE.md` Domain Map table
+
+**Backfilled history from past sessions' narrative into atomic reference notes** (previously this content only existed as prose in this file). Five new notes in `03-resources/`, domain `claude-workflow`:
+- `skill-vault-file.md` — tested working, status active
+- `skill-repo-state.md` — **still untested**, status draft
+- `skills-kepano-obsidian.md` — the 5-skill third-party install
+- `claude-md-hierarchy.md` — current contents of all 5 CLAUDE.md tiers, links to `[[agentic-document-cascade]]` as the general pattern this is an instance of
+- `mcp-servers-in-use.md` — Obsidian MCP (active) + GitHub MCP (**still untested**, status draft)
+
+MOC and `vault-index.md` updated to point to these real notes instead of `*(stub)*` placeholders.
+
+**Inbox checked — empty.** Only `.gitkeep` present; the two stale daily notes referenced in old session logs (`20260629-daily.md`, `20260630-daily.md`) don't actually exist on disk, confirming the prior session's finding. Nothing to triage this session.
+
+### Unresolved / next steps
+
+- **`repo-state` skill still untested** — run `/repo-state` in a non-vault repo to verify fetch-first behavior
+- **GitHub MCP still untested** — restart Claude Code, confirm GitHub tools appear in `/context`
+- **RV Prediction + CT essay** (priorities 1–2) need actual work started — due ~2026-07-07, nothing done yet this session beyond tracking
+- **Research backlog unchanged (longstanding, still highest content priority once course deadlines clear):** `secs-elementary-current-system.md`, `fukushima-theorem.md`, `gibf-beamforming-core.md` still unwritten; literature notes for Suzuki 2011, Vanhamäki & Juusola 2020, Wax & Kailath 1985, Fukushima 1976 still pending
+- Vault has uncommitted changes from this session (active-projects.md, vault-index.md, CLAUDE.md, new project/area/MOC/reference notes) — not yet committed/pushed
+
+---
+
+## What was done (session 6 — 2026-06-30)
+
+### CLAUDE.md audit and improvements
+
+Reviewed and improved the CLAUDE.md hierarchy across the whole environment, prompted by the `/insights` usage report from this two-week window.
+
+**Structure understood:** Three-tier hierarchy — `~/.claude/CLAUDE.md` (global, every session), `Code-Repositories/CLAUDE.md` (all repos), folder-level files (`Python/`, `Sites/`), then individual project files. The `Code-Repositories/`, `Python/`, `Sites/`, and `~/.claude/` CLAUDE.mds are **not in any git repo** — they live outside tracked directories.
+
+**Changes made:**
+
+`~/.claude/CLAUDE.md` — added three sections:
+- **Environment:** Windows 11 / PowerShell rule (no Bash heredoc syntax)
+- **Planning vs Implementation:** plan-only discipline — do not implement until explicitly told to proceed
+- **Repo State:** never report clean until `git fetch` + `gh pr list`; reference `/repo-state` skill
+
+`Code-Repositories/CLAUDE.md` — added **New repo setup** sequence: clone → install → test → .gitignore → CLAUDE.md (after pulling). Confirm remote file existence before deleting locally.
+
+`Sites/CLAUDE.md` (new file) — created with two sections:
+- **Stack & Deploy target:** defers to each project's CLAUDE.md; check `.github/workflows/` for CI config. Kept tech-agnostic intentionally (may use more than Vite/React in future).
+- **Deployment & Verification:** DOM queries (not screenshots), check base paths, smoke test before declaring done.
+
+`Python/CLAUDE.md` — added **Coding standards** section: ruff format, ruff check, type hints best effort on public function signatures (skip notebook cells), NumPy docstrings for public API only.
+
+`lab-notebooks/CLAUDE.md` — added **What this is** section: "Low-stakes space for notebooks and experiments before they are formalized into proper documentation or migrated to main projects." This is the only changed file in a tracked git repo — committed and pushed.
+
+`External-Repositories/CLAUDE.md` — deleted (was a 1-line empty file; misleading).
+
+**Python coding standards decision:**
+- ruff format + ruff check (user's choice)
+- Type hints: best effort — annotate public function signatures in installable packages; skip in notebook cells (recommended given mixed research/notebook codebase)
+- Docstrings: public API only, NumPy format (standard for scientific Python)
+
+**Remaining from report (still open):**
+- GitHub MCP server (`claude mcp add github -- npx -y @modelcontextprotocol/server-github`) — needs GITHUB_PERSONAL_ACCESS_TOKEN in Windows user env vars first
+- Hooks (PostToolUse lint) — user wants explanation before implementing; recommended as project-level `.claude/settings.json` per repo since lint commands differ
+- Boilerplate intro line cleanup across project CLAUDE.mds — deferred to next session
+
+---
+
+## What was done (session 6 — 2026-06-30)
+
+### vault-file skill verified; math blog project registered; GitHub MCP added
+
+**vault-file skill tested and confirmed working.** The two stale daily notes from hot.md (`20260629-daily.md`, `20260630-daily.md`) turned out not to exist on disk — they were phantom references written as if the Daily Notes plugin had created them, but it only fires from the Obsidian UI. Instead, a real capture was used as the test: the math blog brainstorm from `C:\Users\strid\Desktop\Prompts\Personal\Blogprop1.md`.
+
+The vault-file workflow ran correctly end-to-end:
+1. Wrote capture to `00-inbox/20260630-blog-proposal.md`
+2. Searched for duplicates (none found)
+3. Proposed frontmatter (`type: project`, `domain: general`, tags `writing/blog`, `mathematics/category-theory`, `mathematics/duality`) and destination (`01-projects/math-blog/math-blog.md`)
+4. Stopped and waited for user confirmation — hard rule enforced correctly
+5. On confirmation: updated frontmatter in place, moved note, created `math-blog/` project folder
+
+**Math blog registered as active project.** `vault-index.md` and `active-projects.md` both updated. The blog is a 10-post series using categorical duality as the unifying thread, running from pure math foundations (category theory, tensors, measurement, duality) through applied interdisciplinary science (Fourier/beamforming, stochastic processes, learning). Post 7 (GIBF) is the signature applied piece. Status: `draft`. Next action: choose writing platform, flesh out Post 1 outline.
+
+**GitHub MCP server added globally.** `@modelcontextprotocol/server-github` registered at `--scope user` with `GITHUB_PERSONAL_ACCESS_TOKEN` env var. Will be available in all repos after restarting Claude Code. Token set with 90-day expiration.
+
+### Unresolved / next steps
+
+- **Test GitHub MCP:** restart Claude Code and verify GitHub tools appear in `/context`
+- **Test `repo-state`:** still untested; run `/repo-state` in any non-vault repo
+- **Research backlog (unchanged, highest priority):** `secs-elementary-current-system.md`, `fukushima-theorem.md`, `gibf-beamforming-core.md` still unwritten — source PDFs on disk
+- **Literature notes** for Suzuki 2011, Vanhamäki & Juusola 2020, Wax & Kailath 1985, Fukushima 1976 still pending
+- **Active projects** next actions unchanged from session 5
+
+---
+
+## What was done (session 5 — 2026-06-30)
+
+### Claude Code tooling upgraded: kepano skills + custom skills
+
+This session was entirely meta — no research content. Prompted by running `/insights`, which surfaced a usage report across 51 sessions. The report's key findings shaped the work done.
+
+**Insights report summary (for reference in future sessions):**
+- Best-working setup: Obsidian vault via MCP as a "second brain" — the continuity mechanism is working
+- Main friction: first-attempt code bugs, deploy/env config failures, scope overreach (implementing when only a plan was asked for)
+- Quick wins identified: Custom Skills for recurring routines, Hooks for pre-flight git sync
+
+**kepano/obsidian-skills installed.** Cloned `kepano/obsidian-skills` and copied its contents into `obsidian/.claude/` (the vault's Claude config directory). Five skills now live in `obsidian/.claude/skills/`:
+- `obsidian-markdown` — correct Obsidian-flavored syntax (wikilinks, callouts, properties) without needing to describe it each session
+- `obsidian-bases` — Obsidian Bases file creation/editing
+- `json-canvas` — JSON Canvas files
+- `obsidian-cli` — Obsidian CLI interaction
+- `defuddle` — **most immediately useful**: strips web page clutter to clean markdown before writing to vault, saving tokens on web captures
+
+These will appear in `/context` after restarting Claude Code in the vault session (they require the opening `---` frontmatter delimiter to be present in each SKILL.md — user verified this was added).
+
+**Two custom skills written (not yet confirmed loading):**
+
+`vault-file` — in `obsidian/.claude/skills/vault-file/SKILL.md`. Workflow: read inbox note → search vault for duplicates → propose complete frontmatter → propose destination + filename → **STOP and wait for user confirmation** → move on confirmation only. Hard rule: never call `move_note` before user confirms. This encodes the vault CLAUDE.md constraint ("AI must NEVER auto-file a note out of 00-inbox").
+
+`repo-state` — in `~/.claude/skills/repo-state/SKILL.md` (global, not project-scoped). Workflow: `git fetch` first → `gh pr list` → branch status → last 5 commits → summary paragraph. Hard rule: never say "clean" until remote has been fetched. This prevents the recurring issue from the insights report where stale repo state was reported as clean.
+
+**Four tools evaluated for integration:**
+1. `kepano/obsidian-skills` → installed (above)
+2. `karpathy/autoresearch` → skipped; requires NVIDIA GPU, is for ML training research, not applicable to this domain
+3. `anthropics/skill-creator` → used its methodology (draft-first iteration) to write the custom skills; the full eval loop is overkill for personal skills but the draft → describe → test pattern was followed
+4. `teng-lin/notebooklm-py` → deferred for user to explore; most relevant angle is Obsidian sync + zero-token research offload (throw IBF/SECS papers into NotebookLM, let Gemini do analysis, Claude does synthesis). Risk: unofficial Google API, can break.
+
+### Unresolved / next steps
+
+- **Verify skills load**: start a fresh Claude Code session in the vault directory, run `/context all`, confirm `vault-file`, `repo-state`, and the 5 kepano skills appear in the Skills section. If missing, check that each SKILL.md has `---` as its very first line.
+- **Try `vault-file`**: there are two stale daily notes in `00-inbox` (`20260629-daily.md`, `20260630-daily.md`) — use `/vault-file` to process them as a first test
+- **Try `repo-state`**: run `/repo-state` in any non-vault repo before starting work to verify the fetch-first behavior
+- **Research backlog unchanged**: `secs-elementary-current-system.md`, `fukushima-theorem.md`, `gibf-beamforming-core.md` still unwritten; literature notes for Suzuki 2011, Vanhamäki & Juusola 2020, Wax & Kailath 1985, Fukushima 1976 still pending
+- **notebooklm-py**: user was going to explore this independently; potentially useful for batch-analyzing IBF_Project PDFs
+
+---
 
 ## What was done (session 4 — 2026-06-30)
 

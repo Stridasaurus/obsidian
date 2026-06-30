@@ -161,7 +161,7 @@ Update this table when a new domain is added to `02-areas/`.
 
 | Domain slug | Description | MOC file |
 |---|---|---|
-| (none yet — add as first notes are filed) | | |
+| `claude-workflow` | How Strider uses Claude Code: CLAUDE.md hierarchy, skills, MCP servers, hooks | `claude-workflow-moc.md` |
 
 ---
 
