@@ -29,8 +29,6 @@ tags:
 
 - [[suzuki-2011-gibf|Suzuki 2011 — GIBF source paper (aeroacoustics, not space physics)]]
 - [[vanhamaki-juusola-2020-notes|Vanhamäki & Juusola 2020 — SECS review, ISSI SR-17 Ch. 2]]
-- [[zavala-2010-generalized-inverse-beamforming|Zavala et al. 2010 — GIB investigation/validation study]]
-- [[li-2014-elastic-net-beamforming|Li, Tong & Jiang 2014 — elastic net regularization for beamforming]]
 - [[fukushima-1976-notes|Fukushima 1976 — original theorem, not locally available]] *(stub)*
 - [[wax-kailath-1985-notes|Wax & Kailath 1985 — MMV / subspace methods, not locally available]] *(stub)*
 

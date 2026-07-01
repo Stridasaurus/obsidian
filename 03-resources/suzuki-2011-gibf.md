@@ -31,4 +31,3 @@ The load-bearing detail for the mag-GIBF project: Suzuki's `A` is an **acoustic*
 
 [[gibf-beamforming-core]] — the permanent note built directly from this paper's algorithm (Eqs. 1-4), extended and stress-tested on a real (non-acoustic) transfer kernel
 [[secs-gibf-viability]] — active project applying/stress-testing this algorithm outside its native acoustic domain
-[[zavala-2010-generalized-inverse-beamforming]] — independent validation study of this same method

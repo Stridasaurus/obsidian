@@ -60,5 +60,3 @@ Master catalog of permanent notes and MOCs. Update when adding a new permanent n
 | `mcp-servers-in-use.md` | reference | Obsidian + GitHub MCP servers, config and status |
 | `suzuki-2011-gibf.md` | literature | GIBF source paper — aeroacoustics (J. Sound Vib. 330, 2011), not space physics |
 | `vanhamaki-juusola-2020-notes.md` | literature | SECS review, ISSI SR-17 Ch. 2 — source of the corrected Fukushima-theorem mechanism |
-| `zavala-2010-generalized-inverse-beamforming.md` | literature | GIB investigation/validation study (acoustics); corrects a local-library mislabel |
-| `li-2014-elastic-net-beamforming.md` | literature | Elastic net regularization for beamforming (acoustics), alternative to L1-IRLS |
