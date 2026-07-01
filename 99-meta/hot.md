@@ -6,7 +6,29 @@ updated: 2026-07-01
 
 # Recent Context Cache
 
-**Last updated:** 2026-07-01 (session 12)
+**Last updated:** 2026-07-01 (session 13)
+
+## What was done (session 13 — 2026-07-01, vault session)
+
+### Repo-name drift fixed; vault audited and cleaned up; first permanent notes written; IBF_Project literature actually read
+
+Started outside the vault: Strider had renamed two GitHub repos (`GIBF`→`mag-GIBF`, `resume-tracker`→`application-tracker`) but the local folders hadn't followed. Confirmed via `gh repo view` that both renames were real (GitHub's redirect is why the old remotes still worked), then renamed `Python/GIBF`→`Python/mag-GIBF` and updated its remote URL. For the tracker duplication, found `Sites/resume-tracker`'s HEAD was a strict git ancestor of `Sites/application-tracker`'s HEAD (fully merged into `origin/main`) — the only unique content was an untracked `.env` (`VITE_GOOGLE_CLIENT_ID`), which was copied over before deleting the stale folder, on Strider's confirmation.
+
+**Vault self-audit, on request** ("is my vault optimized?"). Verdict: schema/structure genuinely strong, but `04-permanent/` had only 1 note despite months of research, GitHub MCP and the `repo-state` skill had sat "untested" for ~11 sessions, an empty inbox stub was unprocessed, and the vault itself had ~7 sessions of uncommitted changes. Fixed all four: committed/pushed the backlog (a concurrent Code-Repositories session's edits to `hot.md`/`active-projects.md` rode along, unrelated to this work), verified GitHub MCP by actually fetching file content (not just checking connection), verified `repo-state` end-to-end against the vault repo itself, deleted the empty inbox stub on confirmation.
+
+**Wrote 5 permanent notes** — the 3 long-standing backlog slugs (`secs-elementary-current-system`, `fukushima-theorem`, `gibf-beamforming-core`) plus 2 new extractions from the RV-prediction manifesto (`leak-safe-time-series-validation`, `garman-klass-range-variance-proxy`, including the QLIKE-bias and adjustment-invariance nuances from the v2 manifesto delta). Updated both MOCs and `vault-index.md` accordingly.
+
+**Actually read the IBF_Project PDFs**, prompted by Strider pointing at the folder again. Installed `pymupdf` into the scratchpad (not conda `base`) since `Read` needs poppler, which isn't installed. Found real errors: `SECS.pdf`/`Ionospheric SECS.pdf` are byte-identical (both the 296-page ISSI SR-17 book, not two papers); `GIB.pdf` was mislabeled in `local-library.md` as "geomagnetic induction in bodies" — it's actually Zavala et al. 2010, an acoustic beamforming paper; Suzuki 2011 (the GIBF source paper) is aeroacoustics, confirming the acoustic-vs-real-kernel disanalogy already written into `gibf-beamforming-core.md`. **Corrected `fukushima-theorem.md`**: the ground-null breakdown mechanism is tilted field lines at lower latitude (radial-FAC assumption failing), not lateral conductivity variation as previously written — verified directly against Vanhamäki & Juusola 2020 §2.7, which also gave the exact Fukushima 1976 citation.
+
+**Then a meta-discussion and correction.** Strider asked whether it's worth storing content that's easily re-downloadable. Answer converged on: value isn't the content, it's (a) extraction cost that would otherwise repeat, (b) correcting an existing vault error, or (c) pinning a citation a permanent note's claim depends on. By that bar the Zavala/Li literature notes were scope creep (added because the text was already extracted, not because anything depended on them) — dropped both on request, cleaned up the dangling links in the MOC, index, `suzuki-2011-gibf.md`, and `local-library.md`.
+
+### Unresolved / next steps
+
+- **Textbooks folder still uncracked** — category theory / diff geo would directly feed the CT essay (priority #2, due ~2026-07-07) if Strider wants that read next.
+- Fukushima 1976 and Wax & Kailath 1985 still cited only secondhand — no local PDF, unread.
+- Carried over unchanged: RV manifesto full review/refine pass (session 10 task 3) still pending; mag-GIBF manuscript still deferred; CT essay not started; RV-pred SPEC.md cascade deferred (per the concurrent session 12 log below).
+
+---
 
 ## What was done (session 12 — 2026-07-01, in Code Repositories session not vault session)
 
