@@ -2,9 +2,9 @@
 title: "repo-state skill — fetch-before-clean git status workflow"
 type: reference
 domain: claude-workflow
-status: draft
+status: active
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-01
 tags:
   - claude-workflow/skills
 source: ""
@@ -27,5 +27,5 @@ Hard rule: never say "clean" or "up to date" until the remote has actually been 
 
 ## Notes
 
-- **Status: untested as of 2026-06-30 (session 6).** Built session 5, not yet run against a real repo. Run `/repo-state` in a non-vault repo to verify the fetch-first behavior before trusting it.
+- **Status: tested working, 2026-07-01.** Verified against the vault repo itself: ran fetch → `gh pr list` (empty) → branch status (0 ahead/0 behind) → last 5 commits → summary, in order, without skipping steps.
 - Invoke via `/repo-state`.

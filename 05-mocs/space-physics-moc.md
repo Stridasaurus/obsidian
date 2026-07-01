@@ -2,9 +2,9 @@
 title: "Space Physics — Map of Content"
 type: moc
 domain: space-physics
-status: draft
+status: active
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-01
 tags:
   - space-physics/ionosphere
   - space-physics/source-localization
@@ -14,12 +14,12 @@ tags:
 
 ## Ionospheric Current Systems
 
-- [[secs-elementary-current-system|SECS: toroidal+poloidal decomposition of ionospheric currents]] *(stub)*
-- [[fukushima-theorem|Fukushima theorem: poloidal currents leave no ground-level B signature]] *(stub)*
+- [[secs-elementary-current-system|SECS: curl-free/divergence-free decomposition of ionospheric currents]]
+- [[fukushima-theorem|Fukushima theorem: CF/radial-FAC systems leave no ground-level B signature under a uniform ionosphere]]
 
 ## Source Localization Methods
 
-- [[gibf-beamforming-core|GIBF: generalized inverse beamforming via constrained least squares]] *(stub)*
+- [[gibf-beamforming-core|GIBF: per-mode eigen-decomposition beamforming — only beats joint MMV-L1 on a real kernel when sources carry nonzero relative phase]]
 
 ## Instrumentation & Data
 

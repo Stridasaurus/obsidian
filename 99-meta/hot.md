@@ -6,7 +6,28 @@ updated: 2026-07-01
 
 # Recent Context Cache
 
-**Last updated:** 2026-07-01 (session 11)
+**Last updated:** 2026-07-01 (session 12)
+
+## What was done (session 12 — 2026-07-01, in Code Repositories session not vault session)
+
+### RV-pred repo cloned + env set up + manifesto landed; CLAUDE.md hierarchy audited and env-naming drift fixed
+
+**RV-pred repo finally exists locally**, closing a gap flagged since session 9. Cloned `https://github.com/Stridasaurus/realized-volatility-prediction` into `Code-Repositories\Python\realized-volatility-prediction`. Created conda env `dl-p2-env` (Python 3.11; PyTorch CPU, Optuna, statsmodels, arch, pandas, numpy, pyarrow per manifesto §10), registered it as a Jupyter kernel, copied and activated the `.githooks/pre-commit` env-sync hook, wrote a project `CLAUDE.md`, and copied the canonical v2 `MANIFESTO.md` (from `Downloads\`) into the repo root. Added `.gitignore` (model weights/optuna DBs excluded — go to Drive per manifesto, not git). Deliberately skipped generating `requirements.txt` now — the manifesto says it should be pinned to Colab's actual environment at first Colab setup, not derived from this local CPU env. All of this is committed locally on `main` (one commit) but **not pushed**. Strider then explicitly deferred the SPEC.md build cascade for now — no `splits/SPEC.md` or `metrics/SPEC.md` work started.
+
+**CLAUDE.md hierarchy audit, on request.** Read all 9 CLAUDE.md files under `Code-Repositories/` root + `Python/` (root + 7 project-level). Findings reported: (1) `Python/CLAUDE.md`'s "Existing environments" table had drifted — documented `fin-env`/`mhd-env` (hyphenated, per its own naming rule) but the actual conda envs were `fin_env`/`mhd_env` (underscored); `dl-p2-env` was missing entirely. (2) Two projects are embedded as git submodules pinned behind their standalone sibling clones (`mag-GIBF/magnetometer-time-series-simulator` @ stale commit vs. `Python/magnetometer-time-series-simulator` @ HEAD; `Summer-2026-Deep-Learning/Project-1` @ stale commit vs. `Python/magnetic-source-identification` @ HEAD) — their embedded CLAUDE.md describes older project states. (3) `lab-notebooks/CLAUDE.md` re-pastes generic bootstrap commands already stated once in `Python/CLAUDE.md`. (4) Minor header-style inconsistency in two files.
+
+**Strider's response:** fix the env table, and actually rename the conda envs to match the hyphen convention consistently (not just fix the doc). Submodule staleness: no action needed — "purely for context in an otherwise empty repo, probably will be removed when the work begins"; the DL-course one is a class fork, not a problem. **Action taken:** cloned `fin_env`→`fin-env` and `mhd_env`→`mhd-env` via `conda create --clone`, re-registered both Jupyter kernels to point at the new env paths, removed the old underscored envs. Updated all references (`Python/magnetometer-time-series-simulator/CLAUDE.md` + its `environment.yml`, `Python/mhd-ibf-reconstruction/CLAUDE.md`) from `mhd_env`→`mhd-env`. Added the missing `dl-p2-env` row to `Python/CLAUDE.md`'s table. These edits are **uncommitted** in the two affected git repos (magnetometer-time-series-simulator, mhd-ibf-reconstruction) — not yet asked to commit.
+
+**Two pre-existing issues found but left alone (out of scope, not caused by this session):** `magnetometer-time-series-simulator/mag-sim.ipynb`'s embedded Jupyter kernelspec metadata still points at `fin_env` (a different, unrelated env mismatch baked into the notebook JSON — not touched, since editing notebook internals wasn't asked for and is orthogonal to the rename). `mhd-ibf-reconstruction`'s `environment.yml` is missing from the working tree entirely (shows as git-deleted, predates this session) even though its CLAUDE.md references running `conda env create -f environment.yml` — explains a gap noted during the audit but not fixed.
+
+### Unresolved / next steps
+
+- **RV-pred build cascade** — deferred by Strider. When resumed: `splits/SPEC.md` + `metrics/SPEC.md` first (manifesto §11), everything else inherits correctness from these.
+- **Commit decision pending** in `magnetometer-time-series-simulator` and `mhd-ibf-reconstruction` repos (env-rename edits) and in `realized-volatility-prediction` (currently local-only, not pushed).
+- **`lab-notebooks/CLAUDE.md` boilerplate trim** — flagged in the audit, not acted on (wasn't part of what Strider asked to fix).
+- Carried over unchanged: RV manifesto full review/refine pass (task 3 from session 10) still pending; mag-GIBF manuscript still deferred; CT essay (priority #2, due ~2026-07-07) not started; `04-permanent/` still underpopulated.
+
+---
 
 ## What was done (session 11 — 2026-07-01)
 

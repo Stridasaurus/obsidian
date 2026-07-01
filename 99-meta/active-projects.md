@@ -13,7 +13,7 @@ Priority order set 2026-06-30 (course deadlines drive #1–2; career/momentum dr
 - **Priority:** 1 — due in a week (~2026-07-07), course deliverable
 - **Goal:** Can a small LSTM beat HAR at forecasting realized volatility, and does any edge survive honest OOS validation? DL course Project 2.
 - **Status:** in-progress
-- **Next action:** Manifesto regenerated as v2 (`Downloads\MANIFESTO.md`, 2026-07-01) with target-honesty and Stage-3 refinements — full review/refine pass against the vault note still pending (task 3 on Strider's list), then write SPEC.md cascade, then Stage 0 data pipeline + baselines in notebook 00
+- **Next action:** Repo now cloned locally (`Code-Repositories\Python\realized-volatility-prediction`), `dl-p2-env` set up, canonical v2 manifesto landed in repo root (2026-07-01, local commit not pushed). Build cascade deliberately deferred by Strider — when resumed, full manifesto review/refine pass against the vault note (task 3) still pending, then write SPEC.md cascade (`splits/SPEC.md` + `metrics/SPEC.md` first), then Stage 0 data pipeline + baselines in notebook 00
 - **Notes:** `[[rv-prediction]]` — repo: `realized-volatility-prediction/`
 
 ---

@@ -1,10 +1,10 @@
 ---
-title: Machine Learning — Map of Content
+title: "Machine Learning — Map of Content"
 type: moc
 domain: machine-learning
-status: draft
+status: active
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-01
 tags:
   - machine-learning/neural-networks
   - machine-learning/time-series
@@ -23,7 +23,8 @@ tags:
 
 ## Time Series & Forecasting
 
-*(stub — add when relevant notes exist)*
+- [[leak-safe-time-series-validation|Leak-safe time-series validation: chronological splits, train-only scalers, embargo gap, test touched once]]
+- [[garman-klass-range-variance-proxy|Garman-Klass is a range-variance proxy, not canonical RV — biased low from the omitted overnight return]]
 
 ## Source Localization (ML angle)
 
