@@ -27,6 +27,7 @@ Master catalog of permanent notes and MOCs. Update when adding a new permanent n
 | Folder | Status | Goal |
 |---|---|---|
 | `claude-workflow/` | active | Ongoing practice domain for how Strider uses Claude Code — skills, CLAUDE.md hierarchy, MCP servers, hooks |
+| `personal/` | active | Career trajectory, graduate program research, virtues/priorities |
 
 ## Projects (`01-projects/`)
 

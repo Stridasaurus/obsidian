@@ -1,7 +1,7 @@
 ---
 title: "Active Projects"
 type: meta
-updated: 2026-06-30
+updated: 2026-07-01
 ---
 
 # Active Projects
@@ -13,7 +13,7 @@ Priority order set 2026-06-30 (course deadlines drive #1–2; career/momentum dr
 - **Priority:** 1 — due in a week (~2026-07-07), course deliverable
 - **Goal:** Can a small LSTM beat HAR at forecasting realized volatility, and does any edge survive honest OOS validation? DL course Project 2.
 - **Status:** in-progress
-- **Next action:** Complete Phase 1 — data pipeline + baseline (HAR, GARCH) in notebook 00
+- **Next action:** Manifesto regenerated as v2 (`Downloads\MANIFESTO.md`, 2026-07-01) with target-honesty and Stage-3 refinements — full review/refine pass against the vault note still pending (task 3 on Strider's list), then write SPEC.md cascade, then Stage 0 data pipeline + baselines in notebook 00
 - **Notes:** `[[rv-prediction]]` — repo: `realized-volatility-prediction/`
 
 ---
@@ -33,8 +33,8 @@ Priority order set 2026-06-30 (course deadlines drive #1–2; career/momentum dr
 - **Priority:** 3 — career move, no hard deadline
 - **Goal:** Two go/no-go experiments (CF/DF identifiability + GIBF vs MMV-L1) outputting `DECISION_MEMO.md` with figures and a go/no-go recommendation. Doubles as methods paper backbone.
 - **Status:** planning
-- **Next action:** Build `geometry` and `transfer` modules + tests to get a trusted real transfer matrix A; then run Experiment A end-to-end
-- **Notes:** `[[secs-gibf-viability]]` — repo: `GIBF/viability-test/`
+- **Next action:** Run Experiment Card C, Tier 1 (FLR source-coherence forward model — pure NumPy, no build dependency, resolves the roadmap's most load-bearing open question). Roadmap reconciled with Card C 2026-07-01 (`Downloads/ROADMAP (1).md`, not yet moved into repo); then build `geometry`/`transfer` modules + tests, run Experiment A end-to-end, then Card C Tier 2, then design B2
+- **Notes:** `[[secs-gibf-viability]]` — repo: `GIBF/viability-test/`; project note is stale relative to the reconciled roadmap (still describes pre-φ-sweep B1/B2 framing)
 
 ---
 

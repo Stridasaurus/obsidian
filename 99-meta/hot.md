@@ -1,12 +1,75 @@
 ---
 title: Recent Context Cache
 type: meta
-updated: 2026-06-30
+updated: 2026-07-01
 ---
 
 # Recent Context Cache
 
-**Last updated:** 2026-06-30 (session 7)
+**Last updated:** 2026-07-01 (session 11)
+
+## What was done (session 11 — 2026-07-01)
+
+### Mag-GIBF roadmap reconciled with Card C; manuscript deferred; research-cascade workflow saved to memory
+
+Strider restated his task list (roadmap review, manuscript, RV manifesto review) after a `/clear`. Re-oriented via `hot.md`/`active-projects.md`, then found the mag-GIBF roadmap had moved since session 10: a newer `ROADMAP (1).md` in Downloads already folds in two analytical desk-checks (φ-swept coherence reframe, subspace-separation gating), but **the actual Card C gap flagged last session was still unfixed** — Card C existed as a standalone file but was never wired into the roadmap's decision tree, card list, or status section.
+
+**Manuscript task deferred, not attempted.** Asked what a manuscript draft should contain given zero experiments have actually run (only desk-checks) — Strider said "I don't want to write the manuscript yet," confirming the roadmap review should come first, per his own methodology (manifesto only gets written once an experiment resolves).
+
+**Roadmap fully reconciled** (edited directly in `Downloads/ROADMAP (1).md`, not yet moved to the repo): added Card C as node **C** in the decision tree (explicitly *not* a stub-selecting decision like D1/D2/D3 — it sets Card B/B2's design and the paper's framing only; this also corrected an internal contradiction in Card C's own text, which claimed a failing result should "route toward Stub S"); added a full Card C entry to §6; updated §9's active node/running-experiment/open-questions to reflect Card C Tier 1 (pure NumPy, no `secsy` dependency) as the actual next action, ahead of Card A, by information value. Also caught two concrete scientific-validity issues while reviewing: (1) the D1 pre-registered threshold claimed "0.5 energy fraction ⇔ 30° principal angle," but `sin²(30°)=0.25` not `0.5` — fixed to keep the 0.5 energy-fraction rule and dropped the incorrect angle equivalence; (2) the B2 rule sweeps ~100+ φ×SNR cells with no pre-registered primary/confirmatory cell, a real multiple-comparisons exposure for reviewers — flagged as a new pre-registration item needing Strider's sign-off before Experiment B runs. Appended an Experiment Log entry documenting the reconciliation pass, in the roadmap's own append-only style. Flagged (not fixed): the repo's untracked `GIBF_viability_BUILD_BRIEF.md` (the old master build brief / `PLAN.md`) predates all of this and will need its own revision pass before Manifesto #1 hands off to it; also two near-duplicate `ROADMAP.md` files sit in Downloads (`ROADMAP.md` stale, `ROADMAP (1).md` canonical) — cleanup still needed.
+
+**Strider's research methodology captured to memory** (`user_research_cascade_workflow.md`), since he explicitly asked this be remembered going forward: Roadmap (decide phase, separate Claude.ai project, no repo access) → Manifesto (written only after an experiment resolves decisively; one per branch, unconditional) → SPEC (modularizes for parallel agent work) → Design (concrete per-tech-stack agent instructions, separated from SPEC so a stack change costs one new design doc). Key operational rule for me going forward: any new experiment card must be explicitly wired into the roadmap's tree/card-list/status, not left standalone — this was the exact recurring gap this session fixed.
+
+### Unresolved / next steps
+
+- **RV manifesto review/refine** (Strider's task 3, unstarted this session) — still pending: reconcile `rv-prediction.md`'s tables against the v2 delta from session 10.
+- **Mag-GIBF manuscript** — explicitly deferred by Strider; do not start without a fresh ask on scope (front-matter-only vs. full skeleton vs. something else — he rejected both options offered).
+- **Mag-GIBF roadmap** — reconciled in Downloads only; not yet moved into the `GIBF` repo or reflected in the vault's `secs-gibf-viability.md` project note (that note is now stale relative to the reconciled roadmap — still describes pre-φ-sweep B1/B2 framing).
+- Carried over unchanged from session 10: `04-permanent/` still underpopulated; RV-pred repo still not cloned locally.
+
+---
+
+## What was done (session 10 — 2026-06-30/07-01)
+
+### New `personal` area; mag-GIBF roadmap first pass reviewed; RV manifesto v2 noted
+
+**Full task list captured.** Strider laid out an ordered task list spanning mag-GIBF (roadmap → manuscript), RV (manifesto → proposal → spec/design/implementation, due ~2026-07-07), several maintenance items (spec/design skill precision, local env↔repo sync, general repo maintenance, skills/CLAUDE.md optimization, vault population), then Dynamica (frontend design, correlationlab bug fix, pca-engine agentic-workflow practice port), then MEG and magnetometer/mag-sim check-ins — plus token-limited personal-time items (diff-geo paper/homework, blog, career/grad research, virtues/priorities). Cross-checked against `active-projects.md` and `project_priority_2026q3.md` — the list matched cleanly; everything nested under existing tracked projects except one item.
+
+**New `02-areas/personal/` domain created** at Strider's request, to track career trajectory and graduate-program research (and possibly virtues/priorities). Registered in vault `CLAUDE.md` Domain Map and `99-meta/vault-index.md`. No MOC yet (same pattern as `claude-workflow`: add once there's content).
+
+**Magnetometer coherogram flagged as the one non-fitting item** — a vibe-coded side project off the mag research track, buggy, deliberately deferred by Strider until the agenda clears (after RV submission). Saved to cross-session memory (`project_magnetometer_coherogram.md`) rather than the vault, since there's nothing to file yet — this prevents it from being resurfaced as a priority candidate prematurely.
+
+**mag-GIBF roadmap (`ROADMAP.md`) and `EXPERIMENT_CARD_C_flr_coherence.md` reviewed** (both shared from Downloads, not yet in the repo). Both are internally consistent and dense — no contradictions found between roadmap invariants/glossary/D1-D2 decision rules and the card. One concrete gap: Card C (the FLR source-coherence forward model that resolves the roadmap's own §9 open question #1, the "most load-bearing next move") isn't yet wired into the roadmap document — not listed in §6 alongside Cards A/B, not shown in the §5 decision tree, and §9's open question #1 still reads as unresolved rather than "in progress via Card C." Confirmed the sequencing is correct as Strider described it: run Card C (before B2 is designed, per Card C's own §C.6) *then* fold the result back into the roadmap — this is one motion, not two passes. Strider plans to take another pass on the roadmap tomorrow after running Card C.
+
+**RV manifesto regenerated as v2** at `C:\Users\strid\Downloads\MANIFESTO.md` (supersedes the `Desktop\Prompts\Class\RV-pred\MANIFESTO.md` copy referenced in session 9 — that old copy is not yet reconciled/moved into the repo). v2 adds several refinements not previously captured in the vault: the target is named honestly as a **range-variance proxy** (Garman-Klass) explicitly distinguished from canonical high-frequency RV; the Stage-3 upgrade is re-specified as an **overnight-inclusive target** (RS+overnight² or windowed Yang-Zhang, computable from the same OHLC snapshot) rather than a PK+GK+RS blend; a new **QLIKE proxy-bias caveat** (GK omits the overnight return, so QLIKE's unbiasedness assumption doesn't fully hold — report RMSE alongside); an **adjustment-invariance nuance** for Stage 3; and explicit **floor-vs-ceiling framing** (the base project claims only a floor on extractable signal). Folded this delta into `01-projects/rv-prediction/rv-prediction.md` (manifesto path updated, delta section added, full table reconciliation still pending) and into memory (`project_rv_pred.md`). Session was cut off by token limit right after this note was made — this hot.md write completes the wrap-up.
+
+### Unresolved / next steps
+
+- **mag-GIBF:** run Experiment Card C, then update `ROADMAP.md` §6/§5/§9 with the result (task 1 on Strider's list, "another pass tomorrow").
+- **RV manifesto:** full review/refine pass (task 3) — reconcile `rv-prediction.md`'s tables (Key Decisions, Stages, Success Criteria) against the v2 delta noted above, then move/consolidate the Desktop vs. Downloads manifesto copies into the actual repo (still not cloned locally — flagged since session 9, still unresolved).
+- **RV proposal** (task 4) not started.
+- Carried over unchanged: `04-permanent/` still underpopulated (1 note vault-wide); neuroscience/finance MOCs still held off; research backlog (`secs-elementary-current-system.md`, `fukushima-theorem.md`, `gibf-beamforming-core.md`, 4 literature notes) unwritten; `repo-state` skill and GitHub MCP still unverified; RV-pred repo still not cloned locally.
+
+---
+
+## What was done (session 9 — 2026-06-30, in Code Repositories session not vault session)
+
+### RV-pred manifesto re-shared and confirmed; gap found between vault note and actual repo state
+
+User shared `C:\Users\strid\Desktop\Prompts\Class\RV-pred\MANIFESTO.md` in a non-vault Claude Code session (working dir: `Code-Repositories\`). Read it in full. Content was **already comprehensively captured** in `01-projects/rv-prediction/rv-prediction.md` from a prior session — module map, frozen decisions, S1–S7 criteria, stages, hard invariants, next action all match. No new vault writes needed; user explicitly asked to "just acknowledge it," not act on it yet.
+
+**New finding, not previously recorded:** the manifesto folder (`Desktop\Prompts\Class\RV-pred\`) is **not a git repository**, and the GitHub repo the vault note points to (`https://github.com/Stridasaurus/realized-volatility-prediction`) is **not cloned anywhere under `Code-Repositories\`** on this machine. A predecessor doc, `DL proj 2 PLAN .md`, sits next to the manifesto in that Desktop folder — never reconciled against the manifesto or pulled into the vault. So the actual code/repo work for RV-pred (priority #1, due ~2026-07-07) has **not started** — only planning artifacts exist, split across a Desktop scratch folder and a GitHub remote that's never been pulled locally.
+
+**Memory action:** wrote `project_rv_pred.md` to Claude's cross-session memory system (separate from this vault, lives at `~/.claude/projects/.../memory/`) so any future *non-vault* Claude Code session (e.g. one opened directly in a cloned RV-pred repo) has the manifesto's invariants without needing the vault. Indexed in that system's `MEMORY.md`. This is a different persistence layer than the vault note — both now say the same thing, by design.
+
+### Unresolved / next steps
+
+- **Before any RV-pred coding session:** clone `https://github.com/Stridasaurus/realized-volatility-prediction` locally (decide where — likely under `Code-Repositories\`), and decide what to do with the orphaned `Desktop\Prompts\Class\RV-pred\` folder (move `MANIFESTO.md` into the repo as the root doc per its own Layer-1 framing; reconcile or archive `DL proj 2 PLAN .md`).
+- **Next action per the manifesto/project note, unchanged:** write the SPEC.md cascade in dependency order — `splits/SPEC.md` + `metrics/SPEC.md` first, then `data`, `features`, `baselines`, `model+harness`, `io` — then build Stage 0 (data pipeline + HAR/GARCH baselines, notebook 00).
+- **RV Prediction + CT essay still the top two priorities, due ~2026-07-07** — as of this session, neither has actual implementation/writing started, only planning.
+- Carried over unchanged: `04-permanent/` still underpopulated (1 note vault-wide); neuroscience/finance MOCs still held off; research backlog (`secs-elementary-current-system.md`, `fukushima-theorem.md`, `gibf-beamforming-core.md`, 4 literature notes) unwritten; `repo-state` skill and GitHub MCP still unverified.
+
+---
 
 ## What was done (session 8 — 2026-06-30)
 
