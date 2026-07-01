@@ -18,15 +18,16 @@ SECS (Spherical Elementary Current Systems) represents an ionospheric sheet curr
 
 ## Constraints & Invariants
 
-- CF and DF are defined by the divergence/curl properties of the *sheet current itself*, not by any property of the resulting ground field — the ground-field consequence (see [[fukushima-theorem]]) is a derived theorem, not part of the definition.
+- CF and DF are defined by the divergence/curl properties of the sheet current itself, not by any property of the resulting ground field — the ground-field consequence (see [[fukushima-theorem]]) is a derived theorem, not part of the definition.
 - The library `secsy` provides the field kernels (Ge, Gn, Gu components); its API for selecting CF vs DF (`current_type='curlfree'` etc.) has changed across versions — pin the version and verify with a probe before trusting any transfer matrix built from it. This bit the mag-GIBF project directly: a library that returns only the horizontal CF current without its companion radial FAC will not reproduce the Fukushima null, silently corrupting any transfer matrix built from it (see [[secs-gibf-viability]]).
 - SECS is a source basis, not a physical model of currents — the sheet-current assumption (all current confined to a thin shell at ionospheric altitude) is itself an approximation, valid only in the quasi-static regime (ground arrays ~10²–10³ km, signal periods where aperture/c ≪ period).
 
 ## Connections
 
-[[fukushima-theorem]] — the ground-null result for CF/radial-FAC systems, a direct consequence of the CF elementary system's field structure
+[[fukushima-theorem]] — the ground-observability consequence of the CF definition
 [[gibf-beamforming-core]] — SECS supplies the source basis and the real transfer matrix A that GIBF and MMV-L1 both invert
 [[secs-gibf-viability]] — active project running a CF/DF identifiability test (Experiment A) on this basis
+[[vanhamaki-juusola-2020-notes]] — primary literature source for this note
 
 ## Open Questions
 
@@ -34,4 +35,4 @@ Whether CF is *identifiable* (not just observable) from ground data at high lati
 
 ## Sources
 
-Suzuki 2011 (J. Sound Vib. 330); Vanhamäki & Juusola 2020 (ISSI SR-17, §2.7) — no literature note written yet. PDFs: `Desktop\School\IBF_Project\SECS.pdf`, `Desktop\School\IBF_Project\Ionospheric SECS.pdf` (see [[local-library]]).
+Vanhamäki & Juusola 2020 (ISSI SR-17, Ch. 2, §2.2-2.3) — read directly, see [[vanhamaki-juusola-2020-notes]]. PDF: `Desktop\School\IBF_Project\SECS.pdf` (see [[local-library]] — note this file is byte-identical to `Ionospheric SECS.pdf`, both are the same 296-page book).

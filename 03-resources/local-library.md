@@ -4,7 +4,7 @@ type: reference
 domain: general
 status: active
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-01
 tags:
   - meta/resources
 source: ""
@@ -19,11 +19,11 @@ Local PDF collection. All files are on the desktop and accessible to Claude duri
 
 | File | Description |
 |---|---|
-| `SECS.pdf` | Spherical Elementary Current Systems (SECS) — core method paper |
-| `Ionospheric SECS.pdf` | SECS applied to ionospheric current reconstruction |
-| `GIB.pdf` | Geomagnetic induction in bodies (GIB) formalism |
-| `Suzuki GIBF.pdf` | Suzuki — GIBF derivation / application |
-| `Elastic Net.pdf` | Elastic net regularization — likely regularization baseline for GIBF |
+| `SECS.pdf` | **Correction (2026-07-01): not a standalone SECS paper.** Byte-identical to `Ionospheric SECS.pdf` (same MD5) — both are the full 296-page ISSI Scientific Report Series 17 book, *Ionospheric Multi-Spacecraft Analysis Tools* (Dunlop & Lühr, eds., 2020, open access). Chapter 2 (Vanhamäki & Juusola, "Introduction to Spherical Elementary Current Systems," pp. 5-33) is the SECS review — see [[vanhamaki-juusola-2020-notes]]. Other chapters cover FAC estimation, Curlometer, AMPERE, and Swarm-specific applications, not yet read. |
+| `Ionospheric SECS.pdf` | Duplicate of `SECS.pdf` — same file, different filename. See above. |
+| `GIB.pdf` | **Correction (2026-07-01): was mislabeled.** Not "Geomagnetic induction in bodies" (a guess from the filename, never verified). Actually Zavala et al. 2010, "Generalized Inverse Beamforming Investigation and Hybrid Estimation" (BeBeC-2010-10) — an **acoustic** beamforming paper validating Suzuki-style GIB. See [[zavala-2010-generalized-inverse-beamforming]]. |
+| `Suzuki GIBF.pdf` | Suzuki 2011, *J. Sound Vib.* 330: 5835-5851 — the actual GIBF method paper. Confirmed by reading: an **aeroacoustics** paper (phased-microphone-array noise-source localization), not a space-physics paper — the mag-GIBF project transplants this algorithm onto a real-valued SECS transfer kernel. See [[suzuki-2011-gibf]]. |
+| `Elastic Net.pdf` | Li, Tong & Jiang 2014, "Sound Source Localization via Elastic Net Regularization" (BeBeC-2014-02) — acoustic beamforming, alternative sparse regularizer to GIBF's L1-IRLS. See [[li-2014-elastic-net-beamforming]]. |
 
 ## Textbooks
 
@@ -85,3 +85,4 @@ Local PDF collection. All files are on the desktop and accessible to Claude duri
 - `cv-strider-settgast.pdf` is in the Textbooks folder (CV, not a textbook)
 - IBF_Project papers are directly relevant to [[secs-gibf-viability]] and [[neural-gibf-proposal]]
 - Shreve I & II are the standard graduate stochastic calculus sequence
+- **2026-07-01:** all 4 distinct IBF_Project PDFs have now been read and have literature notes ([[suzuki-2011-gibf]], [[vanhamaki-juusola-2020-notes]], [[zavala-2010-generalized-inverse-beamforming]], [[li-2014-elastic-net-beamforming]]); descriptions above corrected from filename-guesses to verified content. Fukushima 1976 and Wax & Kailath 1985 are cited within these but their own papers are not present as local PDFs — still unread.
